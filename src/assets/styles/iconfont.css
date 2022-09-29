@@ -1,0 +1,16 @@
+@font-face {font-family: "iconfont";
+  src: url('./iconfont/iconfont.eot?t=1604421176744'); /* IE9 */
+  src: url('./iconfont/iconfont.eot?t=1604421176744#iefix') format('embedded-opentype'), /* IE6-IE8 */
+  url('data:application/x-font-woff2;charset=utf-8;base64,d09GMgABAAAAAAPQAAsAAAAACCAAAAOBAAEAAAAAAAAAAAAAAAAAAAAAAAAAAAAAHEIGVgCDMgqDPIMAATYCJAMUCwwABCAFhG0HTBsQBxEVnJXIfhzkpqmr4p0DR1kVTbYy/z14nvL+PTN38ppCdl6hTy3FXUXkl9oFI247jyC0bHM59tZRyGdI7PTT/0j/d3ppyhBGICRC8j+X45YlML+d5XKjMWmNSUW9AKMJlIVjTQoswAJJ1HMg3rrMw1BAAarQCNWrz6BR2BiMUQpQi+bPnY6dUmBq0hU2Cl/JQoMKxcLWe/VVIMT/vvpEC2WDxhKMo4bN6T2Lbm4tN1wczzFJtuOMpwO4ZSBAI8CAWlFqWISEgUYIBZTuhm5AAWw0eqxOLdwBbrjnEQt3JC9g/uGBYNAoUD6M1EIAdKOCBtxaNgIBtwVRJhsABBrccP69HGQBUADID2wEMjDotZDKaWdJsUKlSqqShfC6jcX2HS1n4o4VLB5woqIVf3xUQHKcE5tUYF+GP3N8kZScimNjAkqPjgoo628alzW1aMCx8rH1ZqWdbRBdZk5GYsPU2mpj6ian/uyogAR/mTnR/rJzY+JTZt6/P+bBg7H37o2+ezfAZBSiUfBNj05ITR5rWWxSSpmOp/+tqzym0JxCYyr7b7Y/o8jiBxUfLCpS5mqjK70PJjn13hx6faxWdvKlo7WOTlx6rOaxZXvu1CP6wI2q6woXKjHjUd21/p195z63167oMgwazVx75My8buuOHVxb5nvptczkeUdPZ2xxeVQwS/LyJFuyGHEWsBgDiujsrqFy8qQ4ohAWA06jEIWiMLB9fMOhJ9d3G+JpWHchE/R/QHL0IfCc1JDZDt6JWS3dfudv6Lx8zcOpRTv9sQsaAJ7cPTXft3vOpj3xT2QovJ/Ha1lmVIGhtIxcbBNyP4tmCACaqykA/DJLCZ6PYyoNsU5h8zyAJh+VQbCpRTK0RmBRkFbgw6YrFKAhfZcXpCQrEJTJDzRgJwFFMXJBU4QTINhGvqQa7Qd1C39oGFWFjkfTDbuWxZ09oysYgPeB2KdCWWrpBOkXDG3mclLgMx7IJnbDpkmzbPiMBfIYU8wz3IooUEw5nMhxmGUEmilBX5xIRO9WTeeUvcjxKS917DHkEigAPB8g5iMF5VYXndznL1DIyri4pqTC/YCYEbcPNhzrFqSztGhVci3PGE+hLSEUoDCSAyeiQ5kZIECX90sgn3BEPXzazoqqpNpKnfnl+TNugcfY7rSadqer8a2O3aKZOF4h21Bez8jGDUPWWCqVAAAAAA==') format('woff2'),
+  url('./iconfont/iconfont.woff?t=1604421176744') format('woff'),
+  url('./iconfont/iconfont.ttf?t=1604421176744') format('truetype'), /* chrome, firefox, opera, Safari, Android, iOS 4.2+ */
+  url('./iconfont/iconfont.svg?t=1604421176744#iconfont') format('svg'); /* iOS 4.1- */
+}
+  
+.iconfont {
+  font-family: "iconfont" !important;
+  font-size: 16px;
+  font-style: normal;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
