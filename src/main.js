@@ -9,9 +9,15 @@ import './assets/styles/border.css'
 import fastClick from 'fastclick'
 // 引入iconfont图标
 import './assets/styles/iconfont.css'
+//轮播效果
+import VueAwesomeSwiper from 'vue-awesome-swiper'
+import 'swiper/dist/css/swiper.css'
+
 
 
 Vue.config.productionTip = false
+fastClick.attach(document.body)
+Vue.use(VueAwesomeSwiper)
 
 new Vue({
   render: h => h(App),
