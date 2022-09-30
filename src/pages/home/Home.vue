@@ -3,6 +3,8 @@
     <home-header></home-header>
     <home-swiper></home-swiper>
     <home-icons></home-icons>
+    <home-recommend></home-recommend>
+    <home-weekend></home-weekend>
   </div>
 </template>
 <script>
@@ -22,8 +24,7 @@ export default {
     HomeWeekend,
   },
   data() {
-    return {
-    };
+    return {};
   },
 };
 </script>
