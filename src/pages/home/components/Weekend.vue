@@ -4,7 +4,7 @@
     <ul>
       <li
         class="item border-bottom"
-        v-for="item of recommendList"
+        v-for="item of list"
         :key="item.id"
       >
         <div class="item-img-wrapper">
@@ -24,33 +24,6 @@ export default {
   props: {
     list: Array,
   },
-  data() {
-    return {
-      recommendList: [
-        {
-          id: "0001",
-          imgUrl:
-            "https://imgs.qunarzz.com/vs_ceph_vcimg/5be2601d1f921f166646b817459a2727.jpeg",
-          title: "大连圣亚海洋世界",
-          desc: "浪漫大连首都,浪漫的海洋主题公园",
-        },
-        {
-          id: "0002",
-          imgUrl:
-            "https://imgs.qunarzz.com/vs_ceph_vcimg/5be2601d1f921f166646b817459a2727.jpeg",
-          title: "大连圣亚海洋世界",
-          desc: "浪漫大连首都,浪漫的海洋主题公园",
-        },
-        {
-          id: "0003",
-          imgUrl:
-            "https://imgs.qunarzz.com/vs_ceph_vcimg/5be2601d1f921f166646b817459a2727.jpeg",
-          title: "大连圣亚海洋世界",
-          desc: "浪漫大连首都,浪漫的海洋主题公园",
-        },
-      ],
-    };
-  },
 };
 </script>
 <style lang="stylus" scoped>
@@ -66,7 +39,7 @@ export default {
 .item-img-wrapper {
   overflow: hidden;
   height: 0;
-  padding-bottom: 33.9%;
+  padding-bottom: 37.09%;
 
   .item-img {
     width: 100%;
