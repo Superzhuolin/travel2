@@ -24,7 +24,8 @@
       <!-- 字母区 -->
       <div class="area" v-for="(item,key) of cities" :key="key">
         <div class="title border-topbottom">{{key}}</div>
-        <div class="item-list" v-for="innerItem of item" :key="innerItem.id">
+        <div class="item-list" v-for="innerItem of item" 
+        :key="innerItem.id" :ref="key">
           <div class="item border-bottom">{{innerItem.name}}</div>
         </div>
       </div>
@@ -43,6 +44,14 @@ export default {
   },
   mounted(){
     this.scroll = new Bscroll(this.$refs.wrapper);
+  },
+  watch:{
+    letter(){
+      if(this.letter){
+        const element = this.$refs[this.letter][0];
+        this.scroll.scrollToElement(element);
+      }
+    }
   }
 };
 </script>
