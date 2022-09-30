@@ -1,41 +1,92 @@
 <template>
   <div class="list" ref="wrapper">
     <div>
-      <!-- 当前城市 -->
-      <div class="area">
-        <div class="title boder-topbottom">当前城市</div>
-        <div class="button-list">
-          <div class="button-wrapper">
-            <div class="button">{{ this.currentCity }}</div>
+      <div>
+        <!-- 当前城市 -->
+        <div class="area">
+          <div class="title border-topbottom">当前城市</div>
+          <div class="button-list">
+            <div class="button-wrapper">
+              <div class="button">北京</div>
+            </div>
           </div>
         </div>
       </div>
       <!-- 热门城市 -->
       <div class="area">
-        <div class="title boder-topbottom">热门城市</div>
+        <div class="title border-topbottom">热门城市</div>
         <div class="button-list">
-          <div
-            class="button-wrapper"
-            v-for="item of hot"
-            :key="item.id"
-            @click="handleCityClick(item.name)"
-          >
-            <div class="button">{{ item.name }}</div>
+          <div class="button-wrapper">
+            <div class="button">北京</div>
+          </div>
+          <div class="button-wrapper">
+            <div class="button">北京</div>
+          </div>
+          <div class="button-wrapper">
+            <div class="button">北京</div>
+          </div>
+          <div class="button-wrapper">
+            <div class="button">北京</div>
+          </div>
+          <div class="button-wrapper">
+            <div class="button">北京</div>
           </div>
         </div>
       </div>
       <!-- 字母区 -->
-      <div class="area" v-for="(item, key) of cities" :key="key" :ref="key">
-        <div class="title boder-topbottom">{{ key }}</div>
+      <div class="area">
+        <div class="title border-topbottom">A</div>
         <div class="item-list">
-          <div
-            class="item border-bottom"
-            v-for="innerItem of item"
-            :key="innerItem.id"
-            @click="handleCityClick(innerItem.name)"
-          >
-            {{ innerItem.name }}
-          </div>
+          <div class="item border-bottom">啊拉耳</div>
+          <div class="item border-bottom">啊拉耳</div>
+          <div class="item border-bottom">啊拉耳</div>
+          <div class="item border-bottom">啊拉耳</div>
+          <div class="item border-bottom">啊拉耳</div>
+          <div class="item border-bottom">啊拉耳</div>
+        </div>
+      </div>
+      <div class="area">
+        <div class="title border-topbottom">A</div>
+        <div class="item-list">
+          <div class="item border-bottom">啊拉耳</div>
+          <div class="item border-bottom">啊拉耳</div>
+          <div class="item border-bottom">啊拉耳</div>
+          <div class="item border-bottom">啊拉耳</div>
+          <div class="item border-bottom">啊拉耳</div>
+          <div class="item border-bottom">啊拉耳</div>
+        </div>
+      </div>
+      <div class="area">
+        <div class="title border-topbottom">A</div>
+        <div class="item-list">
+          <div class="item border-bottom">啊拉耳</div>
+          <div class="item border-bottom">啊拉耳</div>
+          <div class="item border-bottom">啊拉耳</div>
+          <div class="item border-bottom">啊拉耳</div>
+          <div class="item border-bottom">啊拉耳</div>
+          <div class="item border-bottom">啊拉耳</div>
+        </div>
+      </div>
+      <div class="area">
+        <div class="title border-topbottom">A</div>
+        <div class="item-list">
+          <div class="item border-bottom">啊拉耳</div>
+          <div class="item border-bottom">啊拉耳</div>
+          <div class="item border-bottom">啊拉耳</div>
+          <div class="item border-bottom">啊拉耳</div>
+          <div class="item border-bottom">啊拉耳</div>
+          <div class="item border-bottom">啊拉耳</div>
+        </div>
+      </div>
+      <div class="area">
+        <div class="title border-topbottom">A</div>
+        <div class="item-list">
+          <div class="item border-bottom">啊拉耳</div>
+          <div class="item border-bottom">啊拉耳</div>
+          <div class="item border-bottom">啊拉耳</div>
+          <div class="item border-bottom">啊拉耳</div>
+          <div class="item border-bottom">啊拉耳</div>
+          <div class="item border-bottom">啊拉耳</div>
         </div>
       </div>
     </div>
@@ -51,45 +102,16 @@ export default {
     cities: Object,
     letter: String,
   },
-  computed: {
-    ...mapState({
-      currentCity: "city",
-    }),
-  },
-  methods: {
-    //获取所点击的热门城市
-    handleCityClick(city) {
-      // 使用dispatch派发名字为changeCity的Actions,并传入参数city
-      // this.$store.dispatch("changeCity", city);
-      // 由于不是异步或者是批量同步操作
-      //直接使用commit调用名字为changeCity的mutations,并传入参数city
-      // this.$store.commit("changeCity", city);
-
-      this.changeCity(city);
-      //编程式导航跳转
-      this.$router.push("/");
-    },
-    ...mapMutations(["changeCity"]),
-  },
-  watch: {
-    letter() {
-      if (this.letter) {
-        const element = this.$refs[this.letter][0];
-        // console.log(element);
-        this.scroll.scrollToElement(element);
-      }
-    },
-  },
-  mounted() {
+  mounted(){
     this.scroll = new Bscroll(this.$refs.wrapper);
-  },
+  }
 };
 </script>
 <style lang="stylus" scoped>
 @import '~@/assets/styles/varibles.styl';
 
-/* 未实现 */
-.border-top-bottom {
+// 1像素边框
+.border-topbottom {
   &:before {
     border-color: #ccc;
   }
@@ -99,19 +121,19 @@ export default {
   }
 }
 
+.border-bottom {
+  &:before {
+    border-color: #ccc;
+  }
+}
+
 .list {
-  overflow: hidden;
   position: absolute;
+  overflow: hidden;
   top: 1.58rem;
   left: 0;
   right: 0;
   bottom: 0;
-
-  .border-bottom {
-    &:before {
-      border-color: #ccc;
-    }
-  }
 
   .title {
     line-height: 0.54rem;
@@ -141,7 +163,7 @@ export default {
 
   .item-list {
     .item {
-      line-height: 0.76 rem;
+      line-height: 0.76rem;
       padding-left: 0.2rem;
     }
   }
