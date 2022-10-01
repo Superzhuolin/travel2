@@ -25,11 +25,9 @@ export default {
   },
   methods: {
     handleScroll() {
-      //   console.log("scroll
       const top = document.documentElement.scrollTop;
       if (top > 60) {
         let opacity = top / 140;
-        //景点详情的渐隐渐显效果未实现
         opacity = opacity > 1 ? 1 : opacity;
         this.opacityStyle = { opacity };
         this.showAbs = false;
@@ -39,11 +37,10 @@ export default {
     },
   },
   activated() {
-    // addEventListener() 方法用于向指定元素添加监听事件
-    //全局事件的绑定,还会对其他组件造成影响,从而引发错误
     window.addEventListener("scroll", this.handleScroll);
-  }, //页面即将被隐藏或者被替换成新的页面时执行
+  },
   deactivated() {
+    // 对事件进行解绑,防止在其他页面也触发
     window.removeEventListener("scroll", this.handleScroll);
   },
 };
