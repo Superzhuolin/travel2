@@ -12,7 +12,10 @@ import './assets/styles/iconfont.css'
 //轮播效果
 import VueAwesomeSwiper from 'vue-awesome-swiper'
 import 'swiper/dist/css/swiper.css'
-
+//vuex
+import store from './store'
+//解决机型不同无法支持promise的bug
+// import "babel-polyfill"
 
 
 Vue.config.productionTip = false
@@ -22,5 +25,6 @@ Vue.use(VueAwesomeSwiper)
 new Vue({
   render: h => h(App),
   router,
+  store,
 }).$mount('#app')
  
