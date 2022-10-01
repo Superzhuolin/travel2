@@ -1,9 +1,9 @@
 <template>
   <div>
-    <div class="banner">
+    <div class="banner" @click="handleBannerClick">
       <img
         class="banner-img"
-        src="https://qimgs.qunarzz.com/piao_qsight_provider_piao_qsight_web/0106w120008j2a6hd9F60.jpg_1190x550_cf7d32c6.jpg"
+        src="http://img1.qunarzz.com/sight/p0/201404/23/04b92c99462687fa1ba45c1b5ba4ad77.jpg_600x330_bf9c4904.jpg"
       />
       <div class="banner-info">
         <div class="banner-tittle">大连圣亚海洋世界(AAAA景区)</div>
@@ -13,22 +13,13 @@
         </div>
       </div>
     </div>
+    <common-gallary :imgs="imgs" v-show="showGallary" @close="handleGallaryClose"></common-gallary>
   </div>
-  <!-- 
-
-      文字无法显示
-
-
-
-
-
-
-   -->
 </template>
 
 <script>
-// import CommonGallary from "@/common/gallary/Gallaty.vue";
-// import FadeAnimation from "@/common/fade/FadeAnimation.vue";
+import CommonGallary from "@/common/gallary/Gallary.vue"
+import FadeAnimation from "@/common/fade/FadeAnimation.vue";
 export default {
   name: "DetailBanner",
   props: {
@@ -45,10 +36,17 @@ export default {
       ],
     };
   },
-  methods: {},
+  methods: {
+    handleBannerClick(){
+      this.showGallary=true;
+    },
+    handleGallaryClose(){
+      this.showGallary=false;
+    }
+  },
   components: {
-    // CommonGallary,
-    // FadeAnimation,
+    CommonGallary,
+    FadeAnimation,
   },
 };
 </script>
@@ -72,9 +70,9 @@ export default {
     bottom: 0;
     line-height: 0.6rem;
     color: #fff;
-    // 渐变效果有效
-    background-image: linear-gradient(top, rgba(0, 0, 0, 0), rgba(0, 0, 0, 0.8));
 
+    // 渐变效果有效
+    // background-image: linear-gradient(top, rgba(0, 0, 0, 0), rgba(0, 0, 0, 0.8));
     .banner-tittle {
       flex: 1;
       font-size: 0.32rem;
