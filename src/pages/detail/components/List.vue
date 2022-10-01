@@ -5,9 +5,9 @@
         <span class="item-title-icon"></span>
         {{ item.title }}
       </div>
-      <!-- 递归组件 : 组件的名字就是为了使用递归组件 -->
-      <div class="item-children" v-if="item.children">
-        <detail-list :list="item.children"></detail-list>
+      <div v-if="item.children">
+        <detail-list :list="item.children" class="item-children">
+        </detail-list>
       </div>
     </div>
   </div>
@@ -43,6 +43,6 @@ export default {
 }
 
 .item-children {
-  padding: 0 0.2rem;
+  padding: 0 0.2rem; 
 }
 </style>
