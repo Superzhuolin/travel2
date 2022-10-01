@@ -1,10 +1,11 @@
 <template>
   <div>
     <div class="search">
-      <input class="search-input" type="text" 
+      <input class="search-input" type="text"  
+      v-model="keyward"
       placeholder="输入城市名或拼音" />
     </div>
-   <div class="search-content" ref="search" v-show="keyward">
+    <div class="search-content" ref="search"  v-show="keyward">
       <ul>
         <li
           class="serch-item border-bottom"
@@ -14,7 +15,7 @@
         >
           {{ item.name }}
         </li>
-        <li class="serch-item border-bottom">
+        <li class="serch-item border-bottom" v-show="hasNoData">
           没有找到匹配数据
         </li>
       </ul>
@@ -41,6 +42,33 @@ export default {
       return !this.list.length;
     },
   },
+   watch: {
+    keyward() {
+      //节流函数
+      if (this.timer) {
+        clearTimeout(this.timer);
+      }
+      if (!this.keyward) {
+        this.list = [];
+        return;
+      }
+      this.timer = setTimeout(() => {
+        const result = [];
+        //二次遍历cities获取城市关键词
+        for (let i in this.cities) {
+          this.cities[i].forEach((value) => {
+            if (
+              value.spell.indexOf(this.keyward) > -1 ||
+              value.name.indexOf(this.keyward) > -1
+            ) {
+              result.push(value);
+            }
+          });
+        }
+        this.list = result;
+      }, 100);
+    },
+  },
   methods:{
     handleCityClick(city){
       // this.$store.commit("changeCity",city);
@@ -48,6 +76,10 @@ export default {
       this.$router.push("/");
     },
     ...mapMutations(["changeCity"])
+  },
+   mounted() {
+    // 搜索内容无法滚动
+    this.scroll = new Bscroll(this.$refs.search);
   },
 };
 </script>
@@ -68,6 +100,23 @@ export default {
     text-align: center
     border-radius: .06rem
     color: #666
+  }
+}
+.search-content {
+  z-index: 1;
+  overflow: hidden;
+  position: relative;
+  top: 1.58rem;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: #eee;
+
+  .serch-item {
+    line-height: 0.62rem;
+    padding-left: 0.2rem;
+    background: #fff;
+    color: #666;
   }
 }
 </style>
