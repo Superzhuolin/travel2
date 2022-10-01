@@ -15,7 +15,7 @@ import 'swiper/dist/css/swiper.css'
 //vuex
 import store from './store'
 //解决机型不同无法支持promise的bug
-// import "babel-polyfill"
+import "babel-polyfill"
 
 
 Vue.config.productionTip = false
